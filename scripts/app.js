@@ -11,15 +11,21 @@ function computerPlay () {
 }
 
 //input selections
-let playerSelection = 'ROCK';
+let playerSelection = ""
 let computerSelection = computerPlay();
 
 // player win, lose, or tie -> playerWon = 1, 0, -1
 let playerWon = ""; //declaring as a string to be safe, will become a boolean on assignment each round 
 
+// listen for player selection
+//document.getElementById("rock").addEventListener("click", playround(document.getElementById("rock").getAttribute(data-input),computerSelection));
+
 // play 1 round
-function playRound (playerSelection, computerSelection) {
+function playRound (playerSelection) {
     
+    
+    computerSelection = computerPlay();
+
     //  always uppercase
     playerSelection = playerSelection.toUpperCase();
     computerSelection = computerSelection.toUpperCase();
@@ -68,27 +74,28 @@ function game () {
     // loop for 5 rounds
     for (i = 0; i < 5; i++) {
         
-        let computerSelection = computerPlay();
+
         let playerSelection = prompt("Enter rock, paper, or scissors.");
 
-        playRound(playerSelection, computerSelection);
-
+    
         // increment score for the winner
         switch (playerWon) {
-            case 1:
-                playerScore+= 1;
             case 0:
                 computerScore+=1;
+            case 1:
+                playerScore+= 1;
             case -1:
                 break;
         }
 
-    //output results
-    console.log(`Computer chose ${computerSelection} and you chose ${playerSelection}. Your score is ${playerScore} and the computer's is ${computerScore}.`);
-    console.log(playRound(playerSelection, computerSelection));
-
+         // output round results
+         console.log(playRound(playerSelection));
+         console.log(`Computer chose ${computerSelection} and you chose ${playerSelection}. Your score is ${playerScore} and the computer's is ${computerScore}.`);
     }
 
+
+    //output game results 
+    console.log(`Final score, you: ${playerScore} computer: ${computerScore}`);
 }
 
 game();

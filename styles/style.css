@@ -1,0 +1,57 @@
+
+/* Caveman font
+@font-face {
+    font-family: 'modern_cavemanregular';
+    src: url('./fonts/modern_caveman-webfont.woff2') format('woff2'),
+         url('./fonts/modern_caveman-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+} */
+
+.container {
+    /* fade innn */
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.title-area {
+    display: grid;
+    grid-row-gap: 25px;
+    align-content: center;
+    text-align: center;
+    background: lightcoral;   
+}
+
+.game-area {
+    background: lightpink;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.score-area {
+    display: flex;
+    flex-direction: row;
+}
+
+.score-area, p, h3 {
+    text-align: center;
+    margin: 2px;
+    padding: 2px;
+}
+
+.your-score, .comp-score {
+    font-size: 20px;
+}
+
+button {
+    border-color: white;
+    opacity: 50%;
+}
+
+
+body {
+    background: lightblue;
+}
